@@ -38,9 +38,6 @@ class ProfileController extends Controller
 
     function updatePassword(ProfilePasswordUpdateRequest $request): RedirectResponse
     {
-
-        // dd($request->all());
-
         $user = Auth::user();
         $user->password = bcrypt($request->password);
         $user->save();
